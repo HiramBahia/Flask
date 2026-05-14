@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Meu Sistema Flask</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Flask<span>App</span></div>
+            <ul>
+                <li><a href="{{ url_for('homepage') }}">Home</a></li>
+                <li><a href="{{ url_for('sobre') }}">Sobre</a></li>
+                <li><a href="{{ url_for('contato') }}" class="active">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Entre em Contato</h1>
+            <p>Dúvidas sobre o projeto ou suporte técnico? Utilize os canais abaixo.</p>
+        </section>
+
+        <section class="features">
+            <div class="card">
+                <span style="font-size: 2rem;">📧</span>
+                <h3>E-mail</h3>
+                <p>suporte.aluno@escola.com</p>
+            </div>
+            <div class="card">
+                <span style="font-size: 2rem;">📞</span>
+                <h3>Telefone</h3>
+                <p>(11) 98765-4321</p>
+            </div>
+            <div class="card">
+                <span style="font-size: 2rem;">📍</span>
+                <h3>Laboratório</h3>
+                <p>Bloco C - Sala 204</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Projeto Técnico - Desenvolvimento de Sistemas</p>
+    </footer>
+</body>
+</html>
