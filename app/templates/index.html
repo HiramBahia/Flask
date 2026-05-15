@@ -1,52 +1,31 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Sistema Flask - Home</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
-    <header>
-        <nav class="container">
-            <div class="logo">Flask<span>App</span></div>
-            <ul>
-                <li><a href="{{ url_for('homepage') }}" class="active">Home</a></li>
-                <li><a href="{{ url_for('sobre') }}">Sobre</a></li><li><a href="#">Sobre</a></li>
-                <li><a href="#">Serviços</a></li>
-                <li><a href="{{ url_for('contato') }}">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
+{% extends 'base.html' %}
 
-    <main class="container">
-        <section class="hero">
-            <h1>Bem-vindo ao nosso Sistema Web</h1>
-            <p>Este é um projeto exemplo desenvolvido para o curso de Desenvolvimento de Sistemas, utilizando Python, Flask e CSS moderno.</p>
-            <div class="actions">
-                <a href="#" class="btn btn-primary">Começar Agora</a>
-                <a href="#" class="btn btn-secondary">Saiba Mais</a>
-            </div>
-        </section>
+{% block title %}Meu Sistema Flask - Home{% endblock %}
 
-        <section class="features">
-            <div class="card">
-                <h3>Produtividade</h3>
-                <p>O Flask permite o desenvolvimento ágil de aplicações robustas.</p>
-            </div>
-            <div class="card">
-                <h3>Escalabilidade</h3>
-                <p>Estrutura modular para crescer conforme a necessidade do projeto.</p>
-            </div>
-            <div class="card">
-                <h3>Simplicidade</h3>
-                <p>Código limpo e fácil manutenção para o desenvolvedor.</p>
-            </div>
-        </section>
-    </main>
+{% block content %}
+    <section class="hero">
+        <h1>Bem-vindo ao nosso Sistema Web</h1>
+        <p>Este é um projeto exemplo desenvolvido para o curso de Desenvolvimento de Sistemas, utilizando Python, Flask e CSS moderno.</p>
+        <div class="actions">
+            <a href="{{ url_for('cadastro_alunos') }}" class="btn btn-primary">Cadastrar Aluno</a>
+            <a href="{{ url_for('listagem_alunos') }}" class="btn btn-secondary">Ver Alunos</a>
+        </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2026 Projeto Técnico - Desenvolvimento de Sistemas</p>
-    </footer>
+    <section class="features">
+        <div class="card">
+            <h3>Produtividade</h3>
+            <p>O Flask permite o desenvolvimento ágil de aplicações robustas.</p>
+        </div>
+        <div class="card">
+            <h3>Escalabilidade</h3>
+            <p>Estrutura modular para crescer conforme a necessidade do projeto.</p>
+        </div>
+        <div class="card">
+            <h3>Simplicidade</h3>
+            <p>Código limpo e fácil manutenção para o desenvolvedor.</p>
+        </div>
+    </section>
+{% endblock %}
 </body>
 </html>

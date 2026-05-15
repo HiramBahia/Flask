@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Meu Sistema Flask{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Flask<span>App</span></div>
+            <ul>
+                <li><a href="{{ url_for('homepage') }}" class="active">Home</a></li>
+                <li><a href="{{ url_for('sobre') }}">Sobre</a></li>
+                <li><a href="{{ url_for('contato') }}">Contato</a></li>
+                <li><a href="{{ url_for('cadastro_alunos') }}">Cadastro de Alunos</a></li>
+                <li><a href="{{ url_for('listagem_alunos') }}">Listar Alunos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Projeto Técnico - Desenvolvimento de Sistemas</p>
+    </footer>
+</body>
+</html>

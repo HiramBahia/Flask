@@ -1,48 +1,26 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre - Meu Sistema Flask</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
-    <header>
-        <nav class="container">
-            <div class="logo">Flask<span>App</span></div>
-            <ul>
-                <li><a href="{{ url_for('homepage') }}">Home</a></li>
-                <li><a href="{{ url_for('sobre') }}" class="active">Sobre</a></li>
-                <li><a href="{{ url_for('contato') }}">Contato</a></li>
+{% extends 'base.html' %}
+
+{% block title %}Sobre - Meu Sistema Flask{% endblock %}
+
+{% block content %}
+    <section class="hero">
+        <h1>Desenvolvimento de Sistemas</h1>
+        <p>Conheça os fundamentos e objetivos da nossa jornada técnica.</p>
+    </section>
+
+    <section class="features">
+        <div class="card" style="flex: 2;">
+            <h3>O que estudamos?</h3>
+            <ul style="text-align: left; list-style: none; padding: 0;">
+                <li>➤ Lógica de Programação e Algoritmos</li>
+                <li>➤ Modelagem de Banco de Dados</li>
+                <li>➤ Engenharia de Software e Requisitos</li>
+                <li>➤ Desenvolvimento Web (Frontend e Backend)</li>
             </ul>
-        </nav>
-    </header>
-
-    <main class="container">
-        <section class="hero">
-            <h1>Desenvolvimento de Sistemas</h1>
-            <p>Conheça os fundamentos e objetivos da nossa jornada técnica.</p>
-        </section>
-
-        <section class="features">
-            <div class="card" style="flex: 2;">
-                <h3>O que estudamos?</h3>
-                <ul style="text-align: left; list-style: none; padding: 0;">
-                    <li>➤ Lógica de Programação e Algoritmos</li>
-                    <li>➤ Modelagem de Banco de Dados</li>
-                    <li>➤ Engenharia de Software e Requisitos</li>
-                    <li>➤ Desenvolvimento Web (Frontend e Backend)</li>
-                </ul>
-            </div>
-            <div class="card" style="background-color: #1a1e29; color: white;">
-                <h3>Objetivo Principal</h3>
-                <p>"Formar profissionais capazes de atuar em todas as etapas do ciclo de vida de um software."</p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Projeto Técnico - Desenvolvimento de Sistemas</p>
-    </footer>
-</body>
-</html>
+        </div>
+        <div class="card" style="background-color: #1a1e29; color: white;">
+            <h3>Objetivo Principal</h3>
+            <p>"Formar profissionais capazes de atuar em todas as etapas do ciclo de vida de um software."</p>
+        </div>
+    </section>
+{% endblock %}

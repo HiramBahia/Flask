@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{% block title %}Cadastro de Alunos - Meu Sistema Flask{% endblock %}
+
+{% block content %}
+    <section class="hero">
+        <h1>Cadastro de Alunos</h1>
+        <p>Preencha o formulário abaixo para cadastrar um novo aluno na Unidade Curricular de Desenvolvimento de Sistemas.</p>
+    </section>
+
+    <div style="max-width: 600px; margin: 40px auto; padding: 30px; background-color: #f5f5f5; border-radius: 8px;">
+        <form method="POST" action="{{ url_for('cadastro_alunos') }}">
+            {{ form.hidden_tag() }}
+            
+            <div style="margin-bottom: 20px;">
+                <label for="nome" style="display: block; margin-bottom: 5px; font-weight: bold;">{{ form.nome.label }}</label>
+                {% if form.nome.errors %}
+                    {{ form.nome(style="width: 100%; padding: 8px; border: 2px solid #d9534f; border-radius: 4px;") }}
+                    <div style="color: #d9534f; font-size: 0.9rem;">
+                        {% for error in form.nome.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.nome(style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;") }}
+                {% endif %}
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <label for="email" style="display: block; margin-bottom: 5px; font-weight: bold;">{{ form.email.label }}</label>
+                {% if form.email.errors %}
+                    {{ form.email(style="width: 100%; padding: 8px; border: 2px solid #d9534f; border-radius: 4px;") }}
+                    <div style="color: #d9534f; font-size: 0.9rem;">
+                        {% for error in form.email.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.email(style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;") }}
+                {% endif %}
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <label for="idade" style="display: block; margin-bottom: 5px; font-weight: bold;">{{ form.idade.label }}</label>
+                {% if form.idade.errors %}
+                    {{ form.idade(style="width: 100%; padding: 8px; border: 2px solid #d9534f; border-radius: 4px;") }}
+                    <div style="color: #d9534f; font-size: 0.9rem;">
+                        {% for error in form.idade.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.idade(style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;") }}
+                {% endif %}
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <label for="sexo" style="display: block; margin-bottom: 5px; font-weight: bold;">{{ form.sexo.label }}</label>
+                {% if form.sexo.errors %}
+                    {{ form.sexo(style="width: 100%; padding: 8px; border: 2px solid #d9534f; border-radius: 4px;") }}
+                    <div style="color: #d9534f; font-size: 0.9rem;">
+                        {% for error in form.sexo.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.sexo(style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;") }}
+                {% endif %}
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <label for="matricula" style="display: block; margin-bottom: 5px; font-weight: bold;">{{ form.matricula.label }}</label>
+                {% if form.matricula.errors %}
+                    {{ form.matricula(style="width: 100%; padding: 8px; border: 2px solid #d9534f; border-radius: 4px;") }}
+                    <div style="color: #d9534f; font-size: 0.9rem;">
+                        {% for error in form.matricula.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.matricula(style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;") }}
+                {% endif %}
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <label for="cpf" style="display: block; margin-bottom: 5px; font-weight: bold;">{{ form.cpf.label }}</label>
+                {% if form.cpf.errors %}
+                    {{ form.cpf(style="width: 100%; padding: 8px; border: 2px solid #d9534f; border-radius: 4px;") }}
+                    <div style="color: #d9534f; font-size: 0.9rem;">
+                        {% for error in form.cpf.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.cpf(style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;") }}
+                {% endif %}
+            </div>
+
+            <div style="margin-top: 30px;">
+                {{ form.submit(style="background-color: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem;") }}
+            </div>
+        </form>
+
+        {% if mensagem %}
+            <div style="margin-top: 20px; padding: 15px; background-color: #d4edda; border: 1px solid #c3e6cb; border-radius: 4px; color: #155724;">
+                <strong>Sucesso!</strong> {{ mensagem }}
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
