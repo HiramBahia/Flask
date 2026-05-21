@@ -1,5 +1,4 @@
 class Student:
-    """Classe para representar um aluno da Unidade Curricular de Desenvolvimento de Sistemas"""
     
     def __init__(self, nome, email, idade, sexo, matricula, cpf):
         self.nome = nome
@@ -10,7 +9,6 @@ class Student:
         self.cpf = cpf
     
     def to_dict(self):
-        """Converte o aluno para um dicionário"""
         return {
             'nome': self.nome,
             'email': self.email,

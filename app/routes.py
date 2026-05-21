@@ -18,7 +18,6 @@ def contato():
 
 @app.route('/cadastro-alunos', methods=['GET', 'POST'])
 def cadastro_alunos():
-    """Rota para cadastro de alunos - Recebe GET e POST"""
     form = CadastroAlunoForm()
     mensagem = None
     

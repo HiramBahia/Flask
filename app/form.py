@@ -4,7 +4,6 @@ from wtforms.validators import DataRequired, Email, NumberRange
 
 
 class CadastroAlunoForm(FlaskForm):
-    """Formulário para cadastro de alunos"""
     
     nome = StringField('Nome', validators=[DataRequired(message='Nome é obrigatório')])
     

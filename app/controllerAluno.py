@@ -2,7 +2,6 @@ from app.models import Student
 
 
 class AlunoController:
-    """Controlador responsável pelo gerenciamento de alunos"""
     
     # Atributo de classe para armazenar todos os alunos
     _alunos = []
